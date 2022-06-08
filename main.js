@@ -3,6 +3,12 @@ var currentTab = 0;
 // Display the current tab
 showTab(currentTab);
 
+var startAmount;
+var accomodationExpenses;
+var totalExpenses;
+var netResult;
+var lll;
+
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
@@ -22,6 +28,7 @@ function showTab(n) {
 }
 
 function nextPrev(n) {
+  storeUserInput();
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Hide the current tab:
@@ -32,10 +39,26 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     //...hide form:
     document.querySelector("form").style.display = "none";
+    //...set results:
+    setUserResults();
     //...display results:
     document.getElementById("results").style.display = "block";
   } else {
     // Otherwise, display the correct tab:
     showTab(currentTab);
   }
+}
+
+function storeUserInput() {
+  startAmount = document.getElementById("startAmountInput").value;
+  lll = document.getElementById("x2").value;
+}
+
+function setUserResults() {
+  //
+  totalExpenses = (parseFloat(startAmount) + parseFloat(lll)).toFixed(2);
+  netResult = (parseFloat(startAmount) - parseFloat(totalExpenses)).toFixed(2);
+  //
+  document.getElementById("lol").innerText = startAmount;
+  document.getElementById("lol2").innerText = totalExpenses;
 }
