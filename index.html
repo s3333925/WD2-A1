@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Budget Calculator</title>
+    <title>Holiday Budget Calculator</title>
   </head>
   <body>
     <div class="container">
       <form id="regForm">
         <div class="tab">
+          <h1>Holiday Budget Calculator</h1>
           <label>Starting Amount:</label>
           <input id="startAmount" value="1" />
         </div>
         <div class="tab">
+          <h1>Food Expenses</h1>
           <label>Breakfast:</label>
           <input id="item1Cat1" value="1" />
           <label>Lunch:</label>
@@ -22,6 +24,7 @@
           <input id="item3Cat1" value="1" />
         </div>
         <div class="tab">
+          <h1>Travel Expenses</h1>
           <label>Car Hire:</label>
           <input id="item1Cat2" value="1" />
           <label>Public Transport:</label>
@@ -30,6 +33,7 @@
           <input id="item3Cat2" value="1" />
         </div>
         <div class="tab">
+          <h1>Shopping Expenses</h1>
           <label>Clothing:</label>
           <input id="item1Cat3" value="1" />
           <label>Electronics:</label>
@@ -56,6 +60,11 @@
       <p id="5">hi</p>
       <p id="6">hi</p>
       <p id="7">hi</p>
+      <div class="buttons">
+        <button type="button" id="restartBtn" onclick="resetForm()">
+          Restart
+        </button>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>

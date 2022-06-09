@@ -107,11 +107,24 @@ function calculateResults() {
 
 function setUserResults() {
   //
-  document.getElementById("1").innerText = startAmount;
-  document.getElementById("2").innerText = totalExpensesCat1;
-  document.getElementById("3").innerText = totalExpensesCat2;
-  document.getElementById("4").innerText = totalExpensesCat3;
-  document.getElementById("5").innerText = avgItemExpense;
-  document.getElementById("6").innerText = totalExpenses;
-  document.getElementById("7").innerText = netResult;
+  document.getElementById("1").innerText = "$ " + startAmount;
+  document.getElementById("2").innerText = "$ " + totalExpensesCat1;
+  document.getElementById("3").innerText = "$ " + totalExpensesCat2;
+  document.getElementById("4").innerText = "$ " + totalExpensesCat3;
+  document.getElementById("5").innerText = "$ " + avgItemExpense;
+  document.getElementById("6").innerText = "$ " + totalExpenses;
+  document.getElementById("7").innerText = "$ " + netResult;
+}
+
+function resetForm() {
+  // reset all form values
+  document.getElementById("regForm").reset();
+  // hide results
+  document.getElementById("results").style.display = "none";
+  // display form
+  document.querySelector("form").style.display = "block";
+  // reset current tab counter
+  currentTab = 0;
+  // display current tab
+  showTab(currentTab);
 }
