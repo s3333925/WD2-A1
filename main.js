@@ -1,13 +1,24 @@
 // Current tab is set to be the first tab (0)
 var currentTab = 0;
-// Display the current tab
-showTab(currentTab);
-
 var startAmount;
-var accomodationExpenses;
+var item1Cat1Expense;
+var item2Cat1Expense;
+var item3Cat1Expense;
+var item1Cat2Expense;
+var item2Cat2Expense;
+var item3Cat2Expense;
+var item1Cat3Expense;
+var item2Cat3Expense;
+var item3Cat3Expense;
+var totalExpensesCat1;
+var totalExpensesCat2;
+var totalExpensesCat3;
+var avgItemExpense;
 var totalExpenses;
 var netResult;
-var lll;
+
+// Display the current tab
+showTab(currentTab);
 
 function showTab(n) {
   // This function will display the specified tab of the form ...
@@ -39,6 +50,8 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     //...hide form:
     document.querySelector("form").style.display = "none";
+    //...calculate results:
+    calculateResults();
     //...set results:
     setUserResults();
     //...display results:
@@ -50,15 +63,55 @@ function nextPrev(n) {
 }
 
 function storeUserInput() {
-  startAmount = document.getElementById("startAmountInput").value;
-  lll = document.getElementById("x2").value;
+  startAmount = document.getElementById("startAmount").value;
+  startAmount = parseFloat(startAmount).toFixed(2);
+  item1Cat1Expense = document.getElementById("item1Cat1").value;
+  item2Cat1Expense = document.getElementById("item2Cat1").value;
+  item3Cat1Expense = document.getElementById("item3Cat1").value;
+  item1Cat2Expense = document.getElementById("item1Cat2").value;
+  item2Cat2Expense = document.getElementById("item2Cat2").value;
+  item3Cat2Expense = document.getElementById("item3Cat2").value;
+  item1Cat3Expense = document.getElementById("item1Cat3").value;
+  item2Cat3Expense = document.getElementById("item2Cat3").value;
+  item3Cat3Expense = document.getElementById("item3Cat3").value;
+}
+
+function calculateResults() {
+  // calculate total expenses per category
+  totalExpensesCat1 = (
+    parseFloat(item1Cat1Expense) +
+    parseFloat(item2Cat1Expense) +
+    parseFloat(item3Cat1Expense)
+  ).toFixed(2);
+  totalExpensesCat2 = (
+    parseFloat(item1Cat2Expense) +
+    parseFloat(item2Cat2Expense) +
+    parseFloat(item3Cat2Expense)
+  ).toFixed(2);
+  totalExpensesCat3 = (
+    parseFloat(item1Cat3Expense) +
+    parseFloat(item2Cat3Expense) +
+    parseFloat(item3Cat3Expense)
+  ).toFixed(2);
+  // calculate total expenses
+  totalExpenses = (
+    parseFloat(totalExpensesCat1) +
+    parseFloat(totalExpensesCat2) +
+    parseFloat(totalExpensesCat3)
+  ).toFixed(2);
+  // calculate average item expense
+  avgItemExpense = (parseFloat(totalExpenses) / 9).toFixed(2);
+  // calculate net result
+  netResult = (parseFloat(startAmount) - parseFloat(totalExpenses)).toFixed(2);
 }
 
 function setUserResults() {
   //
-  totalExpenses = (parseFloat(startAmount) + parseFloat(lll)).toFixed(2);
-  netResult = (parseFloat(startAmount) - parseFloat(totalExpenses)).toFixed(2);
-  //
-  document.getElementById("lol").innerText = startAmount;
-  document.getElementById("lol2").innerText = totalExpenses;
+  document.getElementById("1").innerText = startAmount;
+  document.getElementById("2").innerText = totalExpensesCat1;
+  document.getElementById("3").innerText = totalExpensesCat2;
+  document.getElementById("4").innerText = totalExpensesCat3;
+  document.getElementById("5").innerText = avgItemExpense;
+  document.getElementById("6").innerText = totalExpenses;
+  document.getElementById("7").innerText = netResult;
 }
