@@ -63,6 +63,7 @@ function nextPrev(n) {
 }
 
 function storeUserInput() {
+  //
   startAmount = document.getElementById("startAmount").value;
   startAmount = parseFloat(startAmount).toFixed(2);
   item1Cat1Expense = document.getElementById("item1Cat1").value;
@@ -107,13 +108,18 @@ function calculateResults() {
 
 function setUserResults() {
   //
-  document.getElementById("1").innerText = "$ " + startAmount;
-  document.getElementById("2").innerText = "$ " + totalExpensesCat1;
-  document.getElementById("3").innerText = "$ " + totalExpensesCat2;
-  document.getElementById("4").innerText = "$ " + totalExpensesCat3;
-  document.getElementById("5").innerText = "$ " + avgItemExpense;
-  document.getElementById("6").innerText = "$ " + totalExpenses;
-  document.getElementById("7").innerText = "$ " + netResult;
+  document.getElementById("startAmountFinal").innerText = "$ " + startAmount;
+  document.getElementById("totalExpensesCat1").innerText =
+    "$ " + totalExpensesCat1;
+  document.getElementById("totalExpensesCat2").innerText =
+    "$ " + totalExpensesCat2;
+  document.getElementById("totalExpensesCat3").innerText =
+    "$ " + totalExpensesCat3;
+  document.getElementById("avgItemExpense").innerText = "$ " + avgItemExpense;
+  document.getElementById("totalExpenses").innerText = "$ " + totalExpenses;
+  document.getElementById("totalExpensesRes").innerText =
+    "$ (" + totalExpenses + ")";
+  document.getElementById("netResult").innerText = "$ " + netResult;
 }
 
 function resetForm() {

@@ -52,14 +52,45 @@
       </form>
     </div>
     <div id="results">
-      <h1>hello</h1>
-      <p id="1">hi</p>
-      <p id="2">hi</p>
-      <p id="3">hi</p>
-      <p id="4">hi</p>
-      <p id="5">hi</p>
-      <p id="6">hi</p>
-      <p id="7">hi</p>
+      <table>
+        <h2>Expenses</h2>
+        <tr>
+          <td>Food Expenses</td>
+          <td id="totalExpensesCat1"></td>
+        </tr>
+        <tr>
+          <td>Shopping Expenses</td>
+          <td id="totalExpensesCat2"></td>
+        </tr>
+        <tr>
+          <td>Travel Expenses</td>
+          <td id="totalExpensesCat3"></td>
+        </tr>
+
+        <tr>
+          <td><span>Total Expenses</span></td>
+          <td id="totalExpenses"></td>
+        </tr>
+        <tr>
+          <td><span>Average Expense per Item</span></td>
+          <td id="avgItemExpense"></td>
+        </tr>
+      </table>
+      <table>
+        <h2>Result</h2>
+        <tr>
+          <td>Starting Budget Amount</td>
+          <td id="startAmountFinal"></td>
+        </tr>
+        <tr>
+          <td>Total Expenses</td>
+          <td id="totalExpensesRes"></td>
+        </tr>
+        <tr>
+          <td><span>Net Result</span></td>
+          <td id="netResult"></td>
+        </tr>
+      </table>
       <div class="buttons">
         <button type="button" id="restartBtn" onclick="resetForm()">
           Restart
