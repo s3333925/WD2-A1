@@ -13,40 +13,40 @@
           <h1>Holiday Budget Calculator</h1>
           <div class="inputs">
             <label>Budget Amount</label>
-            <input id="startAmount" value="1" />
+            <input id="startAmount" value="0" />
           </div>
         </div>
         <div class="tab">
           <h1>Food Expenses</h1>
           <div class="inputs">
             <label>Breakfast</label>
-            <input id="item1Cat1" value="1" />
+            <input id="item1Cat1" value="0" />
             <label>Lunch</label>
-            <input id="item2Cat1" value="1" />
+            <input id="item2Cat1" value="0" />
             <label>Dinner</label>
-            <input id="item3Cat1" value="1" />
+            <input id="item3Cat1" value="0" />
           </div>
         </div>
         <div class="tab">
           <h1>Travel Expenses</h1>
           <div class="inputs">
             <label>Car Hire</label>
-            <input id="item1Cat2" value="1" />
+            <input id="item1Cat2" value="0" />
             <label>Public Transport</label>
-            <input id="item2Cat2" value="1" />
-            <label>Taxis/Rideshare</label>
-            <input id="item3Cat2" value="1" />
+            <input id="item2Cat2" value="0" />
+            <label>Taxi/Rideshare</label>
+            <input id="item3Cat2" value="0" />
           </div>
         </div>
         <div class="tab">
           <h1>Shopping Expenses</h1>
           <div class="inputs">
             <label>Clothing</label>
-            <input id="item1Cat3" value="1" />
+            <input id="item1Cat3" value="0" />
             <label>Electronics</label>
-            <input id="item2Cat3" value="1" />
+            <input id="item2Cat3" value="0" />
             <label>Gifts</label>
-            <input id="item3Cat3" value="1" />
+            <input id="item3Cat3" value="0" />
           </div>
         </div>
         <div class="buttons">
@@ -60,8 +60,8 @@
       </form>
     </div>
     <div classs="resultsContainer" id="results">
-      <h1 class="dataHeader" id="posNetResult">You are under budget</h1>
-      <h1 class="dataHeader" id="negNetResult">You are over budget</h1>
+      <h1 class="dataHeader" id="posNetResult">You are under budget!</h1>
+      <h1 class="dataHeader" id="negNetResult">You are over budget!</h1>
       <div class="resultsFinalContainer">
           <div class="resultsData">
             <p class="dataHeader">Budget Amount</p>
@@ -76,7 +76,6 @@
             <p class="data" id="netResult"></p>
           </div>
         </div>
-      
       <div class="resultsTotalContainer">
         <div class="resultsData">
           <p class="dataHeader">Food Expense Total</p>

@@ -17,7 +17,6 @@ h1 {
 /* Style the form */
 #regForm {
   margin: 100px auto;
-  width: 45%;
 }
 
 label {
@@ -45,10 +44,7 @@ button {
   border: 1px solid black;
   background-color: white;
   font-size: 14px;
-}
-
-.inputs {
-  margin-top: 3em;
+  font-weight: bold;
 }
 
 /* Style the input fields */
@@ -57,7 +53,7 @@ input {
   padding: 0.5em;
   margin: 0.5em 0;
   width: 100%;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #000000;
   border-radius: 5px;
   text-align: center;
 }
@@ -73,7 +69,6 @@ table {
 
 #results {
   display: none;
-  margin: 0 15%;
 }
 
 span,
@@ -118,7 +113,17 @@ span,
 
 .data {
   background-color: white;
+  border: 1px solid black;
   color: black;
+}
+
+#results,
+.container {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .resultsContainer {

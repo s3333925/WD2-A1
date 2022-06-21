@@ -118,7 +118,7 @@ function setUserResults() {
   document.getElementById("totalExpensesCat3").innerText =
     "$ " + totalExpensesCat3;
   document.getElementById("avgItemExpense").innerText = "$ " + avgItemExpense;
-  document.getElementById("totalExpenses").innerText = "$ -" + totalExpenses;
+  document.getElementById("totalExpenses").innerText = "$ " + totalExpenses;
   document.getElementById("netResult").innerText = "$ " + netResult;
 }
 
