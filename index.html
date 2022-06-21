@@ -11,35 +11,43 @@
       <form id="regForm">
         <div class="tab">
           <h1>Holiday Budget Calculator</h1>
-          <label>Starting Amount:</label>
-          <input id="startAmount" value="1" />
+          <div class="inputs">
+            <label>Budget Amount</label>
+            <input id="startAmount" value="1" />
+          </div>
         </div>
         <div class="tab">
           <h1>Food Expenses</h1>
-          <label>Breakfast:</label>
-          <input id="item1Cat1" value="1" />
-          <label>Lunch:</label>
-          <input id="item2Cat1" value="1" />
-          <label>Dinner:</label>
-          <input id="item3Cat1" value="1" />
+          <div class="inputs">
+            <label>Breakfast</label>
+            <input id="item1Cat1" value="1" />
+            <label>Lunch</label>
+            <input id="item2Cat1" value="1" />
+            <label>Dinner</label>
+            <input id="item3Cat1" value="1" />
+          </div>
         </div>
         <div class="tab">
           <h1>Travel Expenses</h1>
-          <label>Car Hire:</label>
-          <input id="item1Cat2" value="1" />
-          <label>Public Transport:</label>
-          <input id="item2Cat2" value="1" />
-          <label>Taxis/Rideshare:</label>
-          <input id="item3Cat2" value="1" />
+          <div class="inputs">
+            <label>Car Hire</label>
+            <input id="item1Cat2" value="1" />
+            <label>Public Transport</label>
+            <input id="item2Cat2" value="1" />
+            <label>Taxis/Rideshare</label>
+            <input id="item3Cat2" value="1" />
+          </div>
         </div>
         <div class="tab">
           <h1>Shopping Expenses</h1>
-          <label>Clothing:</label>
-          <input id="item1Cat3" value="1" />
-          <label>Electronics:</label>
-          <input id="item2Cat3" value="1" />
-          <label>Gifts:</label>
-          <input id="item3Cat3" value="1" />
+          <div class="inputs">
+            <label>Clothing</label>
+            <input id="item1Cat3" value="1" />
+            <label>Electronics</label>
+            <input id="item2Cat3" value="1" />
+            <label>Gifts</label>
+            <input id="item3Cat3" value="1" />
+          </div>
         </div>
         <div class="buttons">
           <button type="button" id="prevBtn" onclick="nextPrev(-1)">
@@ -51,50 +59,46 @@
         </div>
       </form>
     </div>
-    <div id="results">
-      <table>
-        <h2>Expenses</h2>
-        <tr>
-          <td>Food Expenses</td>
-          <td id="totalExpensesCat1"></td>
-        </tr>
-        <tr>
-          <td>Shopping Expenses</td>
-          <td id="totalExpensesCat2"></td>
-        </tr>
-        <tr>
-          <td>Travel Expenses</td>
-          <td id="totalExpensesCat3"></td>
-        </tr>
-
-        <tr>
-          <td><span>Total Expenses</span></td>
-          <td id="totalExpenses"></td>
-        </tr>
-        <tr>
-          <td><span>Average Expense per Item</span></td>
-          <td id="avgItemExpense"></td>
-        </tr>
-      </table>
-      <table>
-        <h2>Result</h2>
-        <tr>
-          <td>Starting Budget Amount</td>
-          <td id="startAmountFinal"></td>
-        </tr>
-        <tr>
-          <td>Total Expenses</td>
-          <td id="totalExpensesRes"></td>
-        </tr>
-        <tr>
-          <td><span>Net Result</span></td>
-          <td id="netResult"></td>
-        </tr>
-      </table>
+    <div classs="resultsContainer" id="results">
+      <h1 class="dataHeader" id="posNetResult">You are under budget</h1>
+      <h1 class="dataHeader" id="negNetResult">You are over budget</h1>
+      <div class="resultsFinalContainer">
+          <div class="resultsData">
+            <p class="dataHeader">Budget Amount</p>
+            <p class="data" id="startAmountFinal"></p>
+          </div>
+          <div class="resultsData">
+            <p class="dataHeader">Total Expenses</p>
+            <p class="data" id="totalExpenses"></p>
+          </div>
+          <div class="resultsData">
+            <p class="dataHeader">Net Result</p>
+            <p class="data" id="netResult"></p>
+          </div>
+        </div>
+      
+      <div class="resultsTotalContainer">
+        <div class="resultsData">
+          <p class="dataHeader">Food Expense Total</p>
+          <p class="data" id="totalExpensesCat1"></p>
+        </div>
+        <div class="resultsData">
+          <p class="dataHeader">Shopping Expense Total</p>
+          <p class="data" id="totalExpensesCat2"></p>
+        </div>
+        <div class="resultsData">
+          <p class="dataHeader">Travel Expense Total</p>
+          <p class="data" id="totalExpensesCat3"></p>
+        </div>
+        <div class="resultsData">
+          <p class="dataHeader">Avg. Expense per Item</p>
+          <p class="data" id="avgItemExpense"></p>
+        </div>
+      </div>
       <div class="buttons">
-        <button type="button" id="restartBtn" onclick="resetForm()">
-          Restart
-        </button>
+          <button type="button" id="restartBtn" onclick="resetForm()">
+            Restart
+          </button>
       </div>
     </div>
     <script src="main.js"></script>

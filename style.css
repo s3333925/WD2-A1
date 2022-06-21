@@ -4,29 +4,62 @@
 
 body {
   font-family: sans-serif;
+  /* background-image: url("https://img.freepik.com/free-vector/summer-beach-background-sandy-seashore-sea-coast-with-palm-tree-vocation-seaside-travel-cartoon-backdrop-illustration_102902-1407.jpg?w=826"); */
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/000/444/847/small_2x/9xxu_obuw_170525.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
 }
 
 /* Style the form */
 #regForm {
-  background-color: #ffffff;
   margin: 100px auto;
-  padding: 40px;
-  width: 70%;
-  min-width: 300px;
+  width: 45%;
+}
+
+label {
+  width: 100%;
+  display: inline-block;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 0.5em;
+  padding: 0.5em;
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 14px;
+}
+
+.inputs {
+  margin-top: 3em;
 }
 
 /* Style the input fields */
 input {
-  padding: 10px;
+  font-size: 16px;
+  padding: 0.5em;
+  margin: 0.5em 0;
   width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
   border: 1px solid #aaaaaa;
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
+  border-radius: 5px;
+  text-align: center;
 }
 
 /* Hide all steps by default: */
@@ -34,28 +67,71 @@ input.invalid {
   display: none;
 }
 
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-/* Mark the active step: */
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #04aa6d;
+table {
+  margin: 0 auto;
 }
 
 #results {
   display: none;
+  margin: 0 15%;
+}
+
+span,
+.finalAmount {
+  font-weight: bold;
+}
+
+.finalAmount {
+  border-top: 1px solid;
+  border-bottom: 3px double;
+}
+
+.resultsData {
+  width: auto;
+  text-align: center;
+}
+
+.resultsData p {
+  padding: 0.5em;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0.5em;
+}
+
+.dataHeader {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+#posNetResult {
+  background-color: rgb(0, 220, 0);
+  padding: 0.5em;
+}
+
+#negNetResult {
+  background-color: rgb(220, 0, 0);
+  padding: 0.5em;
+}
+
+.data {
+  background-color: white;
+  color: black;
+}
+
+.resultsContainer {
+  margin: 0 15%;
+}
+
+.resultsTotalContainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.resultsFinalContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 1em 0;
 }

@@ -50,11 +50,13 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     //...hide form:
     document.querySelector("form").style.display = "none";
-    //...calculate results:
+    //...calculate results
     calculateResults();
-    //...set results:
+    //...set results
     setUserResults();
-    //...display results:
+    //...determine which results header to show
+    selectResultsHeader();
+    //...display results
     document.getElementById("results").style.display = "block";
   } else {
     // Otherwise, display the correct tab:
@@ -78,7 +80,7 @@ function storeUserInput() {
 }
 
 function calculateResults() {
-  // calculate total expenses per category
+  // Calculate total expenses per category
   totalExpensesCat1 = (
     parseFloat(item1Cat1Expense) +
     parseFloat(item2Cat1Expense) +
@@ -94,15 +96,15 @@ function calculateResults() {
     parseFloat(item2Cat3Expense) +
     parseFloat(item3Cat3Expense)
   ).toFixed(2);
-  // calculate total expenses
+  // Calculate total expenses
   totalExpenses = (
     parseFloat(totalExpensesCat1) +
     parseFloat(totalExpensesCat2) +
     parseFloat(totalExpensesCat3)
   ).toFixed(2);
-  // calculate average item expense
+  // Calculate average expense per item
   avgItemExpense = (parseFloat(totalExpenses) / 9).toFixed(2);
-  // calculate net result
+  // Calculate net result
   netResult = (parseFloat(startAmount) - parseFloat(totalExpenses)).toFixed(2);
 }
 
@@ -116,21 +118,36 @@ function setUserResults() {
   document.getElementById("totalExpensesCat3").innerText =
     "$ " + totalExpensesCat3;
   document.getElementById("avgItemExpense").innerText = "$ " + avgItemExpense;
-  document.getElementById("totalExpenses").innerText = "$ " + totalExpenses;
-  document.getElementById("totalExpensesRes").innerText =
-    "$ (" + totalExpenses + ")";
+  document.getElementById("totalExpenses").innerText = "$ -" + totalExpenses;
   document.getElementById("netResult").innerText = "$ " + netResult;
 }
 
+function selectResultsHeader() {
+  // if net result >= 0...
+  if (netResult >= 0) {
+    // ...display positive net result header
+    document.getElementById("posNetResult").style.display = "block";
+    // ...hide negaive net result header
+    document.getElementById("negNetResult").style.display = "none";
+  }
+  // Otherwise...
+  else {
+    // ...display negaive net result header
+    document.getElementById("negNetResult").style.display = "block";
+    // ...hide positive net result header
+    document.getElementById("posNetResult").style.display = "none";
+  }
+}
+
 function resetForm() {
-  // reset all form values
+  // Reset all form values
   document.getElementById("regForm").reset();
-  // hide results
+  // Hide results
   document.getElementById("results").style.display = "none";
-  // display form
+  // Display form
   document.querySelector("form").style.display = "block";
-  // reset current tab counter
+  // Reset current tab counter
   currentTab = 0;
-  // display current tab
+  // Display current tab
   showTab(currentTab);
 }
