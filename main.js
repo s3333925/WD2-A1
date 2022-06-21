@@ -1,4 +1,4 @@
-// Current tab is set to be the first tab (0)
+// Variables
 var currentTab = 0;
 var startAmount;
 var item1Cat1Expense;
@@ -20,35 +20,46 @@ var netResult;
 // Display the current tab
 showTab(currentTab);
 
+// Function to display specified form tab
 function showTab(n) {
-  // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("tab");
-
+  // Display tab
   x[n].style.display = "block";
-  // ... and fix the Previous/Next buttons:
+  // If at start of form...
   if (n == 0) {
+    //...hide Previous button
     document.getElementById("prevBtn").style.display = "none";
-  } else {
+  }
+  // Otherwise...
+  else {
+    //..,show Previous button
     document.getElementById("prevBtn").style.display = "inline";
   }
+  // If at end of form...
   if (n == x.length - 1) {
+    //...change Next button text to "Submit"
     document.getElementById("nextBtn").innerHTML = "Submit";
-  } else {
+  } 
+  // Otherwise... 
+  else {
+    //...keep Next button text as "Next"
     document.getElementById("nextBtn").innerHTML = "Next";
   }
 }
 
+// Function to work out which tab to display
 function nextPrev(n) {
+  // Store user input form values
   storeUserInput();
-  // This function will figure out which tab to display
+
   var x = document.getElementsByClassName("tab");
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form... :
+  // If you have reached the end of the form... :
   if (currentTab >= x.length) {
-    //...hide form:
+    //...hide form
     document.querySelector("form").style.display = "none";
     //...calculate results
     calculateResults();
@@ -59,13 +70,13 @@ function nextPrev(n) {
     //...display results
     document.getElementById("results").style.display = "block";
   } else {
-    // Otherwise, display the correct tab:
+    // Otherwise, display the correct form tab
     showTab(currentTab);
   }
 }
 
+// Function to get user input values and store them as variables
 function storeUserInput() {
-  //
   startAmount = document.getElementById("startAmount").value;
   startAmount = parseFloat(startAmount).toFixed(2);
   item1Cat1Expense = document.getElementById("item1Cat1").value;
@@ -79,6 +90,7 @@ function storeUserInput() {
   item3Cat3Expense = document.getElementById("item3Cat3").value;
 }
 
+// Function to calculate user input values
 function calculateResults() {
   // Calculate total expenses per category
   totalExpensesCat1 = (
@@ -108,8 +120,8 @@ function calculateResults() {
   netResult = (parseFloat(startAmount) - parseFloat(totalExpenses)).toFixed(2);
 }
 
+// Function to set the values to display in results pagge
 function setUserResults() {
-  //
   document.getElementById("startAmountFinal").innerText = "$ " + startAmount;
   document.getElementById("totalExpensesCat1").innerText =
     "$ " + totalExpensesCat1;
@@ -122,8 +134,9 @@ function setUserResults() {
   document.getElementById("netResult").innerText = "$ " + netResult;
 }
 
+// Function to determine which results header to show depending on the net result
 function selectResultsHeader() {
-  // if net result >= 0...
+  // If net result >= 0...
   if (netResult >= 0) {
     // ...display positive net result header
     document.getElementById("posNetResult").style.display = "block";
@@ -139,10 +152,11 @@ function selectResultsHeader() {
   }
 }
 
+// Function to delete all form values
 function resetForm() {
   // Reset all form values
-  document.getElementById("regForm").reset();
-  // Hide results
+  document.getElementById("form").reset();
+  // Hide results page
   document.getElementById("results").style.display = "none";
   // Display form
   document.querySelector("form").style.display = "block";
