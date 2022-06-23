@@ -4,8 +4,8 @@
 
 body {
   font-family: sans-serif;
-  /* background-image: url("https://img.freepik.com/free-vector/summer-beach-background-sandy-seashore-sea-coast-with-palm-tree-vocation-seaside-travel-cartoon-backdrop-illustration_102902-1407.jpg?w=826"); */
-  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/000/444/847/small_2x/9xxu_obuw_170525.jpg");
+  /* Graphics RF. 2022. Scene With Bucket On The Beach Free Vector. Image. https://www.vecteezy.com/vector-art/444847-scene-with-bucket-on-the-beach. */
+  background-image: url(/images/beach.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,6 +17,7 @@ h1 {
 /* Style the form */
 #form {
   margin: 100px auto;
+  width: 650px;
 }
 
 label {
