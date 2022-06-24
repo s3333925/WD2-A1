@@ -127,10 +127,6 @@ span,
   transform: translate(-50%, -50%);
 }
 
-.resultsContainer {
-  margin: 0 15%;
-}
-
 .resultsTotalContainer {
   display: grid;
   grid-template-columns: auto auto auto auto;

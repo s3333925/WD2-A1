@@ -38,9 +38,9 @@ function showTab(n) {
   // If at end of form...
   if (n == x.length - 1) {
     //...change Next button text to "Submit"
-    document.getElementById("nextBtn").innerHTML = "Submit";
-  } 
-  // Otherwise... 
+    document.getElementById("nextBtn").innerHTML = "Calculate";
+  }
+  // Otherwise...
   else {
     //...keep Next button text as "Next"
     document.getElementById("nextBtn").innerHTML = "Next";
