@@ -17,10 +17,10 @@ var avgItemExpense;
 var totalExpenses;
 var netResult;
 
-// Display the current tab
+// Call funtion to isplay the current tab
 showTab(currentTab);
 
-// Function to display specified form tab
+// Function to display specified form tab and buttons
 function showTab(n) {
   var x = document.getElementsByClassName("tab");
   // Display tab
@@ -37,7 +37,7 @@ function showTab(n) {
   }
   // If at end of form...
   if (n == x.length - 1) {
-    //...change Next button text to "Submit"
+    //...change Next button text to "Calculate"
     document.getElementById("nextBtn").innerHTML = "Calculate";
   }
   // Otherwise...
@@ -49,7 +49,7 @@ function showTab(n) {
 
 // Function to work out which tab to display
 function nextPrev(n) {
-  // Store user input form values
+  // Call function to tore user input
   storeUserInput();
 
   var x = document.getElementsByClassName("tab");
@@ -57,20 +57,20 @@ function nextPrev(n) {
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // If you have reached the end of the form... :
+  // If you have reached the end of the form...
   if (currentTab >= x.length) {
     //...hide form
     document.querySelector("form").style.display = "none";
-    //...calculate results
+    //...call function to calculate results
     calculateResults();
-    //...set results
+    //...call function to set results
     setUserResults();
-    //...determine which results header to show
+    //...call function to determine which results header to show
     selectResultsHeader();
     //...display results
     document.getElementById("results").style.display = "block";
   } else {
-    // Otherwise, display the correct form tab
+    // Otherwise, call function to display the current tab
     showTab(currentTab);
   }
 }
@@ -90,7 +90,7 @@ function storeUserInput() {
   item3Cat3Expense = document.getElementById("item3Cat3").value;
 }
 
-// Function to calculate user input values
+// Function to calculate user input values to two decimal places
 function calculateResults() {
   // Calculate total expenses per category
   totalExpensesCat1 = (
@@ -162,6 +162,6 @@ function resetForm() {
   document.querySelector("form").style.display = "block";
   // Reset current tab counter
   currentTab = 0;
-  // Display current tab
+  // Call function to display current tab
   showTab(currentTab);
 }
